@@ -57,3 +57,5 @@ group :test do
 end
 
 gem "rspec", "~> 3.13"
+
+gem "graphql", "~> 2.3"
