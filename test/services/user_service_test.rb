@@ -1,3 +1,0 @@
-describe UserService do
-  
-end
