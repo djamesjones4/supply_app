@@ -1,9 +1,5 @@
 class UserService
-  def self.build()
-    UserService.new()
-  end
-
-  def create_new_user(first_name:, last_name:, email:, user_type: "base")
+  def self.create_new_user(first_name:, last_name:, email:, user_type: "base")
     user = User.create!(first_name: first_name, last_name: last_name, email: email, user_type: user_type)
 
     if user.save
