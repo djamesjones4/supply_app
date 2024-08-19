@@ -9,7 +9,7 @@ class UserService
     if user.save
       {
         success: true,
-        exception_id: user.id
+        user_id: user.id
       }
     else
       Rails.logger.error("Create new user error: ")
