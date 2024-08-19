@@ -9,15 +9,14 @@ module Mutations
     argument :email, String, required: true
     argument :user_type, Types::UserAuthType, required: true
 
-    field :success, boolean, null: false
+    field :success, Boolean, null: false
     field :user_id, ID, null: true
-    def resolve(**args)
+    def resolve(args)
       begin
         UserService.build.create_new_user(first_name: args[:first_name], last_name: args[:last_name], email: args[:email], user_type: args[:user_type])
       rescue StandardError => e
         raise BadRequestError, "Could not create user"
       end
-      super
     end
   end
 end
