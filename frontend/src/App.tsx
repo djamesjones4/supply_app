@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { gql, useMutation } from '@apollo/client';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,4 +33,49 @@ function App() {
   )
 }
 
-export default App
+function CreateUser() {
+    let input;
+    const [createUser, { data, loading, error }] = useMutation(CREATE_USER);
+
+    if (loading) return 'Submitting...';
+    if (error) return `Submission error! ${error.message}`;
+    return (
+        <div>
+            <form
+                onSubmit={e => {
+                    e.preventDefault();
+                    createUser({ variables: { type: input.value } });
+                    input.value = '';
+                }}
+            >
+                <input
+                    ref={node => {
+                        input = node;
+                    }}
+                />
+                <button type="submit">Create User</button>
+            </form>
+        </div>
+    );
+}
+
+const CREATE_USER = gql`
+
+  mutation create_user {
+  createUser(
+    input: {
+      firstName: "Another Random",
+      lastName: "username",
+      email: "myemail@email.com",
+      userType: base
+    }
+  ) {
+    success
+    userId
+  }
+    
+}
+`;
+
+// export default App
+export default CreateUser
