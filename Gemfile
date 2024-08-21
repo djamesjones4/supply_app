@@ -44,6 +44,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
   gem "rspec-rails", "~> 6.1"
+  gem "rack-cors", "~> 2.0"
 end
 
 group :development do
@@ -61,3 +62,5 @@ gem "rspec", "~> 3.13"
 
 gem "graphql", "~> 2.3"
 gem "graphiql-rails", group: :development
+
+# gem "rack-cors", "~> 2.0"
