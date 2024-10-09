@@ -64,3 +64,5 @@ gem "graphql", "~> 2.3"
 gem "graphiql-rails", group: :development
 
 # gem "rack-cors", "~> 2.0"
+
+gem "annotate", "~> 3.2"
