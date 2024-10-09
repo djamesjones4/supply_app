@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :bigint           not null, primary key
+#  email      :string
+#  first_name :string
+#  last_name  :string
+#  points     :integer
+#  user_type  :enum             default(NULL)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class User < ActiveRecord::Base
 
   enum user_type: %w[base admin super_admin admin_read_only]
