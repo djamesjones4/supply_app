@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_21_190602) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_21_191719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
   create_enum "user_auth_type", ["base", "admin", "super_admin", "admin_read_only"]
+
+  create_table "carts", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.float "subtotal"
+    t.float "tax_percentage"
+    t.float "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
 
   create_table "discounts", force: :cascade do |t|
     t.string "name"
@@ -96,6 +106,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_21_190602) do
     t.integer "points"
   end
 
+  add_foreign_key "carts", "users"
   add_foreign_key "order_details", "payment_details", column: "payment_details_id"
   add_foreign_key "order_details", "users"
   add_foreign_key "order_items", "order_details", column: "order_details_id"
