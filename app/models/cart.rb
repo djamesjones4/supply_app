@@ -2,13 +2,13 @@
 #
 # Table name: carts
 #
-#  id             :bigint           not null, primary key
-#  subtotal       :float
-#  tax_percentage :float
-#  total          :float
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  user_id        :bigint           not null
+#  id          :bigint           not null, primary key
+#  subtotal    :float
+#  tax_decimal :float
+#  total       :float
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :bigint           not null
 #
 # Indexes
 #

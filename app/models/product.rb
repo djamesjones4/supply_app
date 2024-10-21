@@ -4,10 +4,10 @@
 #
 #  id                   :bigint           not null, primary key
 #  deleted_at           :datetime
-#  description          :string
-#  name                 :string
-#  price                :float
-#  sku                  :string
+#  description          :string           not null
+#  name                 :string           not null
+#  price                :float            default(0.0), not null
+#  sku                  :string           not null
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  discount_id          :bigint           not null

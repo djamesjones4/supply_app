@@ -3,12 +3,12 @@
 # Table name: user_addresses
 #
 #  id            :bigint           not null, primary key
-#  address_line1 :string
+#  address_line1 :string           not null
 #  address_line2 :string
-#  city          :string
-#  country       :string
-#  postal_code   :string
-#  state         :string
+#  city          :string           not null
+#  country       :string           not null
+#  postal_code   :string           not null
+#  state         :string           not null
 #  telephone     :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null

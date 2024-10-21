@@ -3,10 +3,9 @@
 # Table name: users
 #
 #  id         :bigint           not null, primary key
-#  email      :string
-#  first_name :string
-#  last_name  :string
-#  points     :integer
+#  email      :string           not null
+#  first_name :string           not null
+#  last_name  :string           not null
 #  user_type  :enum             default(NULL)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

@@ -3,7 +3,7 @@
 # Table name: order_details
 #
 #  id                 :bigint           not null, primary key
-#  total              :float
+#  total              :float            not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  payment_details_id :bigint           not null

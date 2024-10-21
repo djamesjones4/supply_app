@@ -5,7 +5,7 @@
 #  id           :bigint           not null, primary key
 #  account_no   :integer
 #  expiry       :date
-#  payment_type :string
+#  payment_type :string           not null
 #  provider     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
