@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_09_203616) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_21_182816) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_203616) do
     t.float "discount_percent"
     t.boolean "active"
     t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_details", force: :cascade do |t|
+    t.bigint "order_id"
+    t.string "provider"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +50,22 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_203616) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "sku"
+    t.bigint "product_category_id", null: false
+    t.bigint "product_inventory_id", null: false
+    t.float "price"
+    t.bigint "discount_id", null: false
+    t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discount_id"], name: "index_products_on_discount_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
+    t.index ["product_inventory_id"], name: "index_products_on_product_inventory_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -51,4 +75,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_09_203616) do
     t.enum "user_type", default: "base", enum_type: "user_auth_type"
     t.integer "points"
   end
+
+  add_foreign_key "products", "discounts"
+  add_foreign_key "products", "product_categories"
+  add_foreign_key "products", "product_inventories"
 end
