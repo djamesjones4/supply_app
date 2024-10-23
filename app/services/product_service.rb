@@ -2,7 +2,7 @@
 
 class ProductService
   def self.create_product_category(name, description)
-    category = ProductCategory.create!(name: name, description: description)
+    category = ProductCategory.new(name: name, description: description)
 
     if category.save
       {
@@ -17,6 +17,11 @@ class ProductService
   end
 
   def self.get_product_categories
-    ProductCategory.all.each do |category| category.to_json end
+    categories = ProductCategory.all
+    category_list = []
+      categories.each do |category|
+        category_list << ProductCategoryApiModel.new(category)
+    end
+    category_list
   end
 end
