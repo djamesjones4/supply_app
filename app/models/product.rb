@@ -27,7 +27,4 @@
 #  fk_rails_...  (product_inventory_id => product_inventories.id)
 #
 class Product < ApplicationRecord
-  belongs_to :product_category
-  belongs_to :product_inventory
-  belongs_to :discount
 end
