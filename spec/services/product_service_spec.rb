@@ -23,4 +23,17 @@ describe ProductService do
       expect(result[0].description).to eq("Shirts for men")
     end
   end
+
+  describe "create_product" do
+    context "with has_inventory = true and no inventory id" do
+      it "creates a new product" do
+        result = described_class.create_product(name: 'new', description: 'product', price: 4.99, sku: '50me-sku-n0', has_inventory: true)
+        expect(result).to be_an_instance_of(ProductApiModel)
+        expect(result.name).to eq('new')
+        expect(result.description).to eq('product')
+        expect(result.product_inventory).to eq 0
+      end
+
+    end
+  end
 end
