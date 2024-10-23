@@ -24,4 +24,14 @@ class ProductService
     end
     category_list
   end
+
+  def self.create_product(name, description, price, sku, )
+    return nil unless
+  end
+
+  private
+
+  def create_product_inventory
+
+  end
 end
