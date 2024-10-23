@@ -60,7 +60,7 @@ class ProductService
   def self.create_product_inventory
     # create_product_inventory row
     begin
-      ProductInventory.create!(quantity: 0 )
+      ProductInventory.create!(quantity: 0)
     rescue => e
       Rails.logger.error("Failed to create product inventory error: #{e}")
       raise CreateProductInventoryException, "Could not create product inventory: #{e}"

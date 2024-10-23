@@ -33,7 +33,6 @@ describe ProductService do
         expect(result.description).to eq('product')
         expect(result.product_inventory).to eq 0
       end
-
     end
   end
 end
