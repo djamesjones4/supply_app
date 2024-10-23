@@ -7,12 +7,12 @@
 #  description          :string           not null
 #  name                 :string           not null
 #  price                :float            default(0.0), not null
-#  sku                  :string           not null
+#  sku                  :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
-#  discount_id          :bigint           not null
-#  product_category_id  :bigint           not null
-#  product_inventory_id :bigint           not null
+#  discount_id          :bigint
+#  product_category_id  :bigint
+#  product_inventory_id :bigint
 #
 # Indexes
 #
