@@ -60,7 +60,7 @@ end
 
 gem "rspec", "~> 3.13"
 
-gem "graphql", "~> 2.3"
+gem "graphql", "~> 2.4"
 gem "graphiql-rails", group: :development
 
 # gem "rack-cors", "~> 2.0"
