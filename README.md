@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An in progess Rails Backend, GraphQL API, React/Typescript frontend repository. The idea is to serve as a scafolding for other applications of this stack. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The React/Typescript frontend are configured as a seperate application in the same repository. Rails routes are not used and auto generated rails routes and views will be removed as the project is cleaned up.
